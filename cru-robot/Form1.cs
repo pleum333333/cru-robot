@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,11 +31,20 @@ namespace cru_robot
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //----------------camera---------------------------
             filterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             foreach (FilterInfo filterInfo in filterInfoCollection)
             comboBox2.Items.Add(filterInfo.Name);
             comboBox2.SelectedIndex = 0;
             videoCaptureDevice =  new VideoCaptureDevice();
+            //------------------------serialPort1------------
+            string[] ports=SerialPort.GetPortNames();
+            comboBox1.Items.AddRange(ports);
+            comboBox1.SelectedIndex = 0;
+            button3.Enabled = false;
+
+
+
 
         }
 
@@ -88,6 +98,35 @@ namespace cru_robot
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (videoCaptureDevice.IsRunning) { videoCaptureDevice.Stop(); }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            button1.Enabled = true;
+            try 
+            {
+                serialPort1.PortName = comboBox1.Text;
+                serialPort1.Open();
+            }catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+            button1.Enabled = false;
+            try
+            {
+                serialPort1.PortName = comboBox1.Text;
+                serialPort1.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

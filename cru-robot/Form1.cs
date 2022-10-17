@@ -98,12 +98,13 @@ namespace cru_robot
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (videoCaptureDevice.IsRunning) { videoCaptureDevice.Stop(); }
+            serialPort1.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             button1.Enabled = false;
-            button1.Enabled = true;
+            button3.Enabled = true;
             try 
             {
                 serialPort1.PortName = comboBox1.Text;
@@ -117,7 +118,7 @@ namespace cru_robot
         private void button3_Click(object sender, EventArgs e)
         {
             button1.Enabled = true;
-            button1.Enabled = false;
+            button3.Enabled = false;
             try
             {
                 serialPort1.PortName = comboBox1.Text;

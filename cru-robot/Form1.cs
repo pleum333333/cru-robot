@@ -42,7 +42,7 @@ namespace cru_robot
             comboBox1.Items.AddRange(ports);
             comboBox1.SelectedIndex = 0;
             button3.Enabled = false;
-
+            comboBox3.Text = "9600";
 
 
 
@@ -108,6 +108,7 @@ namespace cru_robot
             try 
             {
                 serialPort1.PortName = comboBox1.Text;
+                serialPort1.BaudRate = Convert.ToInt32(comboBox3.Text);
                 serialPort1.Open();
             }catch(Exception ex) 
             {
@@ -128,6 +129,17 @@ namespace cru_robot
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.Show();
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,6 +47,7 @@ namespace cru_robot
 
 
         }
+        
 
         private void label15_Click(object sender, EventArgs e)
         {
@@ -110,7 +111,9 @@ namespace cru_robot
                 serialPort1.PortName = comboBox1.Text;
                 serialPort1.BaudRate = Convert.ToInt32(comboBox3.Text);
                 serialPort1.Open();
-            }catch(Exception ex) 
+                
+            }
+            catch(Exception ex) 
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -140,6 +143,11 @@ namespace cru_robot
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            serialPort1.ReadTo(listBox1.Text);
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+ 
 namespace cru_robot
 {
     public partial class Form2 : Form
@@ -19,7 +19,7 @@ namespace cru_robot
 
         private void label18_Click(object sender, EventArgs e)
         {
-
+         
         }
     }
 }

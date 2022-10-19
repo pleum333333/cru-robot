@@ -22,7 +22,7 @@ namespace cru_robot
         FilterInfoCollection filterInfoCollection;
         VideoCaptureDevice videoCaptureDevice;
 
-      
+        public static int adan = 10;
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -41,9 +41,9 @@ namespace cru_robot
             string[] ports=SerialPort.GetPortNames();
             comboBox1.Items.AddRange(ports);
             comboBox1.SelectedIndex = 0;
-            button3.Enabled = false;
+            offsp.Enabled = false;
             comboBox3.Text = "9600";
-
+            
 
 
         }
@@ -104,8 +104,9 @@ namespace cru_robot
 
         private void button1_Click(object sender, EventArgs e)
         {
-            button1.Enabled = false;
-            button3.Enabled = true;
+            
+            Connectsp.Enabled = false;
+            offsp.Enabled = true;
             try 
             {
                 serialPort1.PortName = comboBox1.Text;
@@ -117,12 +118,14 @@ namespace cru_robot
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button1.Enabled = true;
-            button3.Enabled = false;
+            
+            Connectsp.Enabled = true;
+            offsp.Enabled = false;
             try
             {
                 serialPort1.PortName = comboBox1.Text;
@@ -132,11 +135,12 @@ namespace cru_robot
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2();
+            Form2 form = new Form2(serialPort1);
             form.Show();
         }
 

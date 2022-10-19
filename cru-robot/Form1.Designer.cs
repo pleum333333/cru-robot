@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Connectsp = new System.Windows.Forms.Button();
+            this.connect_camera = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -48,7 +48,7 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.offsp = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -56,25 +56,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // Connectsp
             // 
-            this.button1.Location = new System.Drawing.Point(207, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Connect";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Connectsp.Location = new System.Drawing.Point(207, 14);
+            this.Connectsp.Name = "Connectsp";
+            this.Connectsp.Size = new System.Drawing.Size(75, 23);
+            this.Connectsp.TabIndex = 0;
+            this.Connectsp.Text = "Connect";
+            this.Connectsp.UseVisualStyleBackColor = true;
+            this.Connectsp.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // connect_camera
             // 
-            this.button2.Location = new System.Drawing.Point(466, 17);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Connect";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.connect_camera.Location = new System.Drawing.Point(466, 17);
+            this.connect_camera.Name = "connect_camera";
+            this.connect_camera.Size = new System.Drawing.Size(75, 23);
+            this.connect_camera.TabIndex = 1;
+            this.connect_camera.Text = "Connect";
+            this.connect_camera.UseVisualStyleBackColor = true;
+            this.connect_camera.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -113,7 +113,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(164, 374);
+            this.label13.Location = new System.Drawing.Point(174, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(14, 13);
             this.label13.TabIndex = 36;
@@ -123,7 +123,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(164, 348);
+            this.label14.Location = new System.Drawing.Point(174, 92);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(14, 13);
             this.label14.TabIndex = 35;
@@ -133,7 +133,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(80, 325);
+            this.label15.Location = new System.Drawing.Point(90, 69);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(37, 13);
             this.label15.TabIndex = 34;
@@ -142,7 +142,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(58, 367);
+            this.textBox5.Location = new System.Drawing.Point(68, 111);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 33;
@@ -150,7 +150,7 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(58, 341);
+            this.textBox6.Location = new System.Drawing.Point(68, 85);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 32;
@@ -159,7 +159,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 374);
+            this.label16.Location = new System.Drawing.Point(22, 118);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 13);
             this.label16.TabIndex = 31;
@@ -169,7 +169,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 348);
+            this.label17.Location = new System.Drawing.Point(22, 92);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(25, 13);
             this.label17.TabIndex = 30;
@@ -179,7 +179,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(164, 400);
+            this.label22.Location = new System.Drawing.Point(174, 144);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(15, 13);
             this.label22.TabIndex = 45;
@@ -187,7 +187,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(58, 393);
+            this.textBox9.Location = new System.Drawing.Point(68, 137);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 20);
             this.textBox9.TabIndex = 44;
@@ -195,7 +195,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(12, 396);
+            this.label23.Location = new System.Drawing.Point(22, 140);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(37, 13);
             this.label23.TabIndex = 43;
@@ -204,25 +204,25 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(15, 432);
+            this.listBox1.Location = new System.Drawing.Point(25, 176);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(163, 173);
+            this.listBox1.Size = new System.Drawing.Size(163, 420);
             this.listBox1.TabIndex = 46;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // button3
+            // offsp
             // 
-            this.button3.Location = new System.Drawing.Point(207, 39);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 47;
-            this.button3.Text = "OFF";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.offsp.Location = new System.Drawing.Point(207, 39);
+            this.offsp.Name = "offsp";
+            this.offsp.Size = new System.Drawing.Size(75, 23);
+            this.offsp.TabIndex = 47;
+            this.offsp.Text = "OFF";
+            this.offsp.UseVisualStyleBackColor = true;
+            this.offsp.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(713, 12);
+            this.button4.Location = new System.Drawing.Point(341, 44);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 48;
@@ -232,10 +232,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 70);
+            this.pictureBox1.Location = new System.Drawing.Point(207, 70);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(776, 252);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.Size = new System.Drawing.Size(581, 535);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -270,10 +269,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 617);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.offsp);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.textBox9);
@@ -290,8 +289,8 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.connect_camera);
+            this.Controls.Add(this.Connectsp);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
@@ -306,8 +305,8 @@
         #endregion
 
         private System.IO.Ports.SerialPort serialPort1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Connectsp;
+        private System.Windows.Forms.Button connect_camera;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -324,7 +323,7 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button offsp;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;

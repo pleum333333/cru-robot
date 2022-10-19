@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.speed_motor_R = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.speed_motor_L = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.current_motor_R = new System.Windows.Forms.TextBox();
+            this.vcc_motor_R = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.current_motor_L = new System.Windows.Forms.TextBox();
+            this.vcc_motor_L = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -61,12 +61,12 @@
             this.label20.TabIndex = 62;
             this.label20.Text = "RPM";
             // 
-            // textBox8
+            // speed_motor_R
             // 
-            this.textBox8.Location = new System.Drawing.Point(295, 84);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 61;
+            this.speed_motor_R.Location = new System.Drawing.Point(295, 84);
+            this.speed_motor_R.Name = "speed_motor_R";
+            this.speed_motor_R.Size = new System.Drawing.Size(100, 20);
+            this.speed_motor_R.TabIndex = 61;
             // 
             // label21
             // 
@@ -87,12 +87,12 @@
             this.label18.Text = "RPM";
             this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
-            // textBox7
+            // speed_motor_L
             // 
-            this.textBox7.Location = new System.Drawing.Point(75, 84);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 58;
+            this.speed_motor_L.Location = new System.Drawing.Point(75, 84);
+            this.speed_motor_L.Name = "speed_motor_L";
+            this.speed_motor_L.Size = new System.Drawing.Size(100, 20);
+            this.speed_motor_L.TabIndex = 58;
             // 
             // label19
             // 
@@ -130,19 +130,19 @@
             this.label10.TabIndex = 54;
             this.label10.Text = "Motor-R";
             // 
-            // textBox3
+            // current_motor_R
             // 
-            this.textBox3.Location = new System.Drawing.Point(295, 58);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 53;
+            this.current_motor_R.Location = new System.Drawing.Point(295, 58);
+            this.current_motor_R.Name = "current_motor_R";
+            this.current_motor_R.Size = new System.Drawing.Size(100, 20);
+            this.current_motor_R.TabIndex = 53;
             // 
-            // textBox4
+            // vcc_motor_R
             // 
-            this.textBox4.Location = new System.Drawing.Point(295, 32);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 52;
+            this.vcc_motor_R.Location = new System.Drawing.Point(295, 32);
+            this.vcc_motor_R.Name = "vcc_motor_R";
+            this.vcc_motor_R.Size = new System.Drawing.Size(100, 20);
+            this.vcc_motor_R.TabIndex = 52;
             // 
             // label11
             // 
@@ -189,19 +189,20 @@
             this.label7.TabIndex = 47;
             this.label7.Text = "Motor-L";
             // 
-            // textBox2
+            // current_motor_L
             // 
-            this.textBox2.Location = new System.Drawing.Point(75, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 46;
+            this.current_motor_L.Location = new System.Drawing.Point(75, 58);
+            this.current_motor_L.Name = "current_motor_L";
+            this.current_motor_L.Size = new System.Drawing.Size(100, 20);
+            this.current_motor_L.TabIndex = 46;
             // 
-            // textBox1
+            // vcc_motor_L
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 45;
+            this.vcc_motor_L.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.vcc_motor_L.Location = new System.Drawing.Point(75, 32);
+            this.vcc_motor_L.Name = "vcc_motor_L";
+            this.vcc_motor_L.Size = new System.Drawing.Size(100, 20);
+            this.vcc_motor_L.TabIndex = 45;
             // 
             // label4
             // 
@@ -228,6 +229,7 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(251, 82);
             this.listBox1.TabIndex = 64;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // writebutton
             // 
@@ -240,6 +242,7 @@
             this.writebutton.TabIndex = 63;
             this.writebutton.Text = "write";
             this.writebutton.UseVisualStyleBackColor = true;
+            this.writebutton.Click += new System.EventHandler(this.writebutton_Click);
             // 
             // Form2
             // 
@@ -249,27 +252,28 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.writebutton);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.speed_motor_R);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.speed_motor_L);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.current_motor_R);
+            this.Controls.Add(this.vcc_motor_R);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.current_motor_L);
+            this.Controls.Add(this.vcc_motor_L);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,23 +282,23 @@
         #endregion
 
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox speed_motor_R;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox speed_motor_L;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox current_motor_R;
+        private System.Windows.Forms.TextBox vcc_motor_R;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox current_motor_L;
+        private System.Windows.Forms.TextBox vcc_motor_L;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button writebutton;

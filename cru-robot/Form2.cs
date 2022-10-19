@@ -39,7 +39,7 @@ namespace cru_robot
 
         private void writebutton_Click(object sender, EventArgs e)
         {
-            
+           
         }
     }
 }

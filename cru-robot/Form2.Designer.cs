@@ -236,7 +236,7 @@
             this.writebutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.writebutton.Image = global::cru_robot.Properties.Resources.unnamed;
             this.writebutton.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.writebutton.Location = new System.Drawing.Point(12, 119);
+            this.writebutton.Location = new System.Drawing.Point(17, 119);
             this.writebutton.Name = "writebutton";
             this.writebutton.Size = new System.Drawing.Size(183, 82);
             this.writebutton.TabIndex = 63;

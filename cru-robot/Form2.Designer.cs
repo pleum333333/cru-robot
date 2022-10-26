@@ -34,19 +34,13 @@
             this.label18 = new System.Windows.Forms.Label();
             this.speed_motor_L = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.current_motor_R = new System.Windows.Forms.TextBox();
-            this.vcc_motor_R = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.Duty2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.current_motor_L = new System.Windows.Forms.TextBox();
-            this.vcc_motor_L = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.Duty1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.writebutton = new System.Windows.Forms.Button();
@@ -55,7 +49,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(401, 91);
+            this.label20.Location = new System.Drawing.Point(401, 65);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(31, 13);
             this.label20.TabIndex = 62;
@@ -63,7 +57,7 @@
             // 
             // speed_motor_R
             // 
-            this.speed_motor_R.Location = new System.Drawing.Point(295, 84);
+            this.speed_motor_R.Location = new System.Drawing.Point(295, 58);
             this.speed_motor_R.Name = "speed_motor_R";
             this.speed_motor_R.Size = new System.Drawing.Size(100, 20);
             this.speed_motor_R.TabIndex = 61;
@@ -71,7 +65,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(241, 87);
+            this.label21.Location = new System.Drawing.Point(241, 61);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(38, 13);
             this.label21.TabIndex = 60;
@@ -80,7 +74,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(181, 91);
+            this.label18.Location = new System.Drawing.Point(181, 65);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(31, 13);
             this.label18.TabIndex = 59;
@@ -89,7 +83,7 @@
             // 
             // speed_motor_L
             // 
-            this.speed_motor_L.Location = new System.Drawing.Point(75, 84);
+            this.speed_motor_L.Location = new System.Drawing.Point(75, 58);
             this.speed_motor_L.Name = "speed_motor_L";
             this.speed_motor_L.Size = new System.Drawing.Size(100, 20);
             this.speed_motor_L.TabIndex = 58;
@@ -97,29 +91,20 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(18, 87);
+            this.label19.Location = new System.Drawing.Point(18, 61);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(38, 13);
             this.label19.TabIndex = 57;
             this.label19.Text = "Speed";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(401, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(14, 13);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "A";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(401, 39);
+            this.label6.Location = new System.Drawing.Point(401, 31);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 13);
+            this.label6.Size = new System.Drawing.Size(15, 13);
             this.label6.TabIndex = 55;
-            this.label6.Text = "V";
+            this.label6.Text = "%";
             // 
             // label10
             // 
@@ -130,55 +115,30 @@
             this.label10.TabIndex = 54;
             this.label10.Text = "Motor-R";
             // 
-            // current_motor_R
+            // Duty2
             // 
-            this.current_motor_R.Location = new System.Drawing.Point(295, 58);
-            this.current_motor_R.Name = "current_motor_R";
-            this.current_motor_R.Size = new System.Drawing.Size(100, 20);
-            this.current_motor_R.TabIndex = 53;
-            // 
-            // vcc_motor_R
-            // 
-            this.vcc_motor_R.Location = new System.Drawing.Point(295, 32);
-            this.vcc_motor_R.Name = "vcc_motor_R";
-            this.vcc_motor_R.Size = new System.Drawing.Size(100, 20);
-            this.vcc_motor_R.TabIndex = 52;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(241, 65);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 51;
-            this.label11.Text = "current";
+            this.Duty2.Location = new System.Drawing.Point(295, 32);
+            this.Duty2.Name = "Duty2";
+            this.Duty2.Size = new System.Drawing.Size(100, 20);
+            this.Duty2.TabIndex = 52;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(249, 39);
+            this.label12.Location = new System.Drawing.Point(231, 39);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(25, 13);
+            this.label12.Size = new System.Drawing.Size(58, 13);
             this.label12.TabIndex = 50;
-            this.label12.Text = "vcc";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(181, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(14, 13);
-            this.label9.TabIndex = 49;
-            this.label9.Text = "A";
+            this.label12.Text = "Duty Cycle";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(181, 39);
+            this.label8.Location = new System.Drawing.Point(181, 31);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(14, 13);
+            this.label8.Size = new System.Drawing.Size(15, 13);
             this.label8.TabIndex = 48;
-            this.label8.Text = "V";
+            this.label8.Text = "%";
             // 
             // label7
             // 
@@ -189,38 +149,22 @@
             this.label7.TabIndex = 47;
             this.label7.Text = "Motor-L";
             // 
-            // current_motor_L
+            // Duty1
             // 
-            this.current_motor_L.Location = new System.Drawing.Point(75, 58);
-            this.current_motor_L.Name = "current_motor_L";
-            this.current_motor_L.Size = new System.Drawing.Size(100, 20);
-            this.current_motor_L.TabIndex = 46;
-            // 
-            // vcc_motor_L
-            // 
-            this.vcc_motor_L.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.vcc_motor_L.Location = new System.Drawing.Point(75, 32);
-            this.vcc_motor_L.Name = "vcc_motor_L";
-            this.vcc_motor_L.Size = new System.Drawing.Size(100, 20);
-            this.vcc_motor_L.TabIndex = 45;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(40, 13);
-            this.label4.TabIndex = 44;
-            this.label4.Text = "current";
+            this.Duty1.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.Duty1.Location = new System.Drawing.Point(75, 28);
+            this.Duty1.Name = "Duty1";
+            this.Duty1.Size = new System.Drawing.Size(100, 20);
+            this.Duty1.TabIndex = 45;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 35);
+            this.label3.Location = new System.Drawing.Point(12, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 13);
+            this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 43;
-            this.label3.Text = "vcc";
+            this.label3.Text = "Duty Cycle";
             // 
             // listBox1
             // 
@@ -257,22 +201,16 @@
             this.Controls.Add(this.label18);
             this.Controls.Add(this.speed_motor_L);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.current_motor_R);
-            this.Controls.Add(this.vcc_motor_R);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.Duty2);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.current_motor_L);
-            this.Controls.Add(this.vcc_motor_L);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.Duty1);
             this.Controls.Add(this.label3);
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.Text = "Motor setup";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -287,19 +225,13 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox speed_motor_L;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox current_motor_R;
-        private System.Windows.Forms.TextBox vcc_motor_R;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox Duty2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox current_motor_L;
-        private System.Windows.Forms.TextBox vcc_motor_L;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox Duty1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button writebutton;
         private System.Windows.Forms.ListBox listBox1;

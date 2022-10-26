@@ -14,7 +14,12 @@ using AForge.Video.DirectShow;
 namespace cru_robot
 {
     public partial class Form1 : Form
-    {
+    {   
+        string dc1, dc2;
+        string rpm1, rpm2;
+        string mode;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -140,7 +145,7 @@ namespace cru_robot
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2(serialPort1);
+            Form2 form = new Form2(dc1,dc2,rpm1,rpm2,mode);
             form.Show();
         }
 
@@ -149,9 +154,62 @@ namespace cru_robot
 
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_KeyUp(object sender, KeyEventArgs e)
+        {
+           if (e.KeyCode == Keys.Enter)
+                {
+                string show;
+                show = ("#" + " " + "0" + " " + "0" + " " + "0" + " " + "0" + "0");
+                serialPort1.Write(show);
+                comboBox1.Items.Add(show);
+                   
+                }
+        }
+
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            serialPort1.ReadTo(listBox1.Text);
+            //serialPort1.ReadTo(listBox1.Text.a);
+        }
+
+        private void button1_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch(e.KeyCode)
+            {
+                case Keys.W://F
+                    string show1;
+                    show1 = ("#" + " " + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 + "1");
+                    serialPort1.Write(show1);
+                    listBox1.Items.Add(show1);  
+
+                    break;
+                case Keys.A://R
+                    string show2;
+                    show2 = ("#" + " " + "-" + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 + "1");
+                    serialPort1.Write(show2);
+                    listBox1.Items.Add(show2);
+                        
+
+                    break;
+                case Keys.S://B
+                    string show3;
+                    show3 = ("#" + " " + "-" + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 + "1");
+                    serialPort1.Write(show3);
+                    listBox1.Items.Add(show3);
+
+                    break;
+                case Keys.D://L
+                    string show4;
+                    show4 = ("#" + " " + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 + "1");
+                    serialPort1.Write(show4);
+                    listBox1.Items.Add(show4);
+
+                    break;
+            }
         }
     }
 }

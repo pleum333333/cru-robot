@@ -49,10 +49,11 @@
             this.label23 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.offsp = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.motor_setup = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +93,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(119, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -220,15 +222,15 @@
             this.offsp.UseVisualStyleBackColor = true;
             this.offsp.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // motor_setup
             // 
-            this.button4.Location = new System.Drawing.Point(341, 44);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 48;
-            this.button4.Text = "Motor setup";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.motor_setup.Location = new System.Drawing.Point(341, 44);
+            this.motor_setup.Name = "motor_setup";
+            this.motor_setup.Size = new System.Drawing.Size(75, 23);
+            this.motor_setup.TabIndex = 48;
+            this.motor_setup.Text = "Motor setup";
+            this.motor_setup.UseVisualStyleBackColor = true;
+            this.motor_setup.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -264,12 +266,24 @@
             this.label3.TabIndex = 50;
             this.label3.Text = "Baud Rate";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(547, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "CONTROL";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button1_KeyDown);
+            this.button1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.button1_KeyUp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 617);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.motor_setup);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.offsp);
@@ -324,9 +338,10 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button offsp;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button motor_setup;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
 

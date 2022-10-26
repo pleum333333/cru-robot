@@ -14,18 +14,13 @@ namespace cru_robot
     public partial class Form2 : Form
     {
         //SerialPort serial1;
-        string dC1, dC2;
-        string rpM1, rpM2;
         string modE;
         
-        private Form1 mainForm = null; 
-        public Form2(string dC1, string dC2,string rpM1,string rpM2,string modE)
+        private Form1 form1 = null; 
+        public Form2(Form1 form1,string modE)
         {
-           // this.serial1 = serial;
-            this.dC1 = dC1;  
-            this.dC2 = dC2;
-            this.rpM1 = rpM1;
-            this.rpM2 = rpM2;
+            // this.serial1 = serial;
+            this.form1 = form1;
             this.modE = modE;
      
             InitializeComponent();
@@ -49,13 +44,13 @@ namespace cru_robot
 
         private void writebutton_Click(object sender, EventArgs e)
         {
-            dC1  = Duty1.Text;
-            dC2 =  Duty2.Text;
-            rpM1 = speed_motor_R.Text;
-            rpM2 = speed_motor_R.Text;
+            form1.dc1  = Int32.Parse(Duty1.Text);
+            form1.dc2  = Int32.Parse(Duty2.Text);
+            form1.rpm1 = Int32.Parse(speed_motor_R.Text);
+            form1.rpm2 = Int32.Parse(speed_motor_R.Text);
             // listBox1.Items.Add("#" + "" + dC1 + "" + dC2 + "" rpM1 + "" + rpM2);
             string show;
-            show = ("#" +" "+dC1+" "+dC2+" "+" "+rpM2+" "+rpM2);
+            show = ("#" +" "+ form1.dc1 + " "+ form1.dc2 + " "+" "+ form1.rpm1 + " "+ form1.rpm2);
             listBox1.Items.Add(show);
         }
     }

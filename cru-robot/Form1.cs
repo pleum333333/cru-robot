@@ -111,6 +111,7 @@ namespace cru_robot
         {
             
             Connectsp.Enabled = false;
+            button1.Enabled = true;
             offsp.Enabled = true;
             try 
             {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label20 = new System.Windows.Forms.Label();
             this.speed_motor_R = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -209,6 +210,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Duty1);
             this.Controls.Add(this.label3);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "Motor setup";
             this.Load += new System.EventHandler(this.Form2_Load);

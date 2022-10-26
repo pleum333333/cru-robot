@@ -175,6 +175,7 @@ namespace cru_robot
         private void button2_Click_1(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+            button1.Focus();
                
         }
 

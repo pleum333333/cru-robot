@@ -17,7 +17,7 @@ namespace cru_robot
     {   
         public int dc1, dc2;
         public int rpm1, rpm2;
-        string mode;
+        public int mode;
 
 
         public Form1()
@@ -47,7 +47,7 @@ namespace cru_robot
             comboBox1.Items.AddRange(ports);
             comboBox1.SelectedIndex = 0;
             offsp.Enabled = false;
-            comboBox3.Text = "9600";
+            comboBox3.Text = "115200";
             
 
 
@@ -146,7 +146,7 @@ namespace cru_robot
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form2 form = new Form2(this,mode);
+            Form2 form = new Form2(this);
             form.Show();
         }
 
@@ -162,16 +162,16 @@ namespace cru_robot
 
         private void button1_KeyUp(object sender, KeyEventArgs e)
         {
-           if (e.KeyCode == Keys.Enter)
-                {
+          
+                
                 string show;
-                show = ("#" + " " + "0" + " " + "0" + " " + "0" + " " + "0" + "0");
+                show = ("#" + " " + "0" + " " + "0" + " " + "0" + " " + "0" + " " + "0" + "\n");
                 serialPort1.Write(show);
-                comboBox1.Items.Add(show);
+                listBox1.Items.Add(show);
                    
-                }
+                
         }
-
+        
         private void button2_Click_1(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
@@ -190,14 +190,17 @@ namespace cru_robot
             {
                 case Keys.W://F
                     string show1;
-                    show1 = ("#" + " " + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 +" "+ "1");
+                   // show1 = ("#" + " " + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 +" "+ mode);
+                  // show1 = ("#" + " " + "-" + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 + " " + mode +"\n");
+                   show1 = ("#" + " " + "-" + dc1 + " " + "-" + rpm1 + " " + dc2 + " " + rpm2 + " " + mode + "\n");
                     serialPort1.Write(show1);
                     listBox1.Items.Add(show1);  
 
                     break;
                 case Keys.A://R
                     string show2;
-                    show2 = ("#" + " " + "-" + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 +" "+ "1");
+                   // show2 = ("#" + " " + "-" + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 +" "+ mode + "\n");
+                    show2 = ("#" + " " + "-" + dc1 + " " + rpm1 + " " + dc2 + " " + rpm2 + " " + mode + "\n");
                     serialPort1.Write(show2);
                     listBox1.Items.Add(show2);
                         
@@ -205,14 +208,17 @@ namespace cru_robot
                     break;
                 case Keys.S://B
                     string show3;
-                    show3 = ("#" + " " + "-" + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 +" "+ "1");
+                    //show3 = ("#" + " " + "-" + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 +" "+ mode);
+                   // show3 = ("#" + " " + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 + " " + mode + "\n");
+                    show3 = ("#" + " " + dc1 + " " + rpm1 + " " + dc2 + " " + rpm2 + " " + mode + "\n");
                     serialPort1.Write(show3);
                     listBox1.Items.Add(show3);
 
                     break;
                 case Keys.D://L
                     string show4;
-                    show4 = ("#" + " " + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 +" "+ "1");
+                   // show4 = ("#" + " " + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 +" "+ mode + "\n");
+                    show4 = ("#" + " " + dc1 + " " + "-" + rpm1 + " " + dc2 + " " + rpm2 + " " + mode + "\n");
                     serialPort1.Write(show4);
                     listBox1.Items.Add(show4);
 

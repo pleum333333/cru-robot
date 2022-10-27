@@ -18,8 +18,10 @@ namespace cru_robot
         public int dc1, dc2;
         public int rpm1, rpm2;
         public int mode;
-
-
+        public float current_L, current_R,Vbatt,Vcc;
+        // @,current_L, current_R,Vbatt,Vcc#
+        public string[] data;
+        public string status;
         public Form1()
         {
             InitializeComponent();
@@ -48,7 +50,7 @@ namespace cru_robot
             comboBox1.SelectedIndex = 0;
             offsp.Enabled = false;
             comboBox3.Text = "115200";
-            
+           
 
 
         }
@@ -124,7 +126,7 @@ namespace cru_robot
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -160,6 +162,18 @@ namespace cru_robot
 
         }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
+            serialPort1.Write("# 0 0 0 0 2");
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
         private void button1_KeyUp(object sender, KeyEventArgs e)
         {
           
@@ -168,7 +182,11 @@ namespace cru_robot
                 show = ("#" + " " + "0" + " " + "0" + " " + "0" + " " + "0" + " " + "0" + "\n");
                 serialPort1.Write(show);
                 listBox1.Items.Add(show);
-                   
+                if (Connectsp.Enabled = false) 
+                {
+                timer1.Start();
+                timer2.Start();
+                 }
                 
         }
         
@@ -177,6 +195,21 @@ namespace cru_robot
             listBox1.Items.Clear();
             button1.Focus();
                
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+             serialPort1.ReadTo(status);
+             data = status.Split(',');
+
+            Vcc_1.Text   = data[1];
+            Vbatt_1.Text = data[2];
+            current_L_1.Text = data[3];
+            current_R_1.Text = data[4];
+            // @,current_L, current_R,Vbatt,Vcc,#
+            // s[0] == @
+            // s[1] == current_L
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -194,8 +227,8 @@ namespace cru_robot
                   // show1 = ("#" + " " + "-" + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 + " " + mode +"\n");
                    show1 = ("# -" + rpm1 + " " + " " + dc1 + " " + "-" + rpm2 + " " + dc2 + " " + "1" + "\n");
                     serialPort1.Write(show1);
-                    listBox1.Items.Add(show1);  
-
+                    listBox1.Items.Add(show1);
+                   
                     break;
                 case Keys.A://R
                     string show2;

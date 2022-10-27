@@ -192,7 +192,7 @@ namespace cru_robot
                     string show1;
                    // show1 = ("#" + " " + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 +" "+ mode);
                   // show1 = ("#" + " " + "-" + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 + " " + mode +"\n");
-                   show1 = ("# -" + dc1 + " " + "-" + rpm1 + " " + dc2 + " " + rpm2 + " " + mode + "\n");
+                   show1 = ("# -" + rpm1 + " " + " " + dc1 + " " + "-" + rpm2 + " " + dc2 + " " + "1" + "\n");
                     serialPort1.Write(show1);
                     listBox1.Items.Add(show1);  
 
@@ -200,7 +200,7 @@ namespace cru_robot
                 case Keys.A://R
                     string show2;
                    // show2 = ("#" + " " + "-" + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 +" "+ mode + "\n");
-                    show2 = ("# -" + dc1 + " " + rpm1 + " " + dc2 + " " + rpm2 + " " + mode + "\n");
+                    show2 = ("# -" + rpm1 + " " + dc1 + " " + rpm1 + " " + dc2 + " " + "1" + "\n");
                     serialPort1.Write(show2);
                     listBox1.Items.Add(show2);
                         
@@ -210,7 +210,7 @@ namespace cru_robot
                     string show3;
                     //show3 = ("#" + " " + "-" + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 +" "+ mode);
                    // show3 = ("#" + " " + dc1 + " " + dc2 + " " + rpm2 + " " + rpm2 + " " + mode + "\n");
-                    show3 = ("# " + dc1 + " " + rpm1 + " " + dc2 + " " + rpm2 + " " + mode + "\n");
+                    show3 = ("# " + rpm1 + " " + dc1 + " " + rpm2 + " " + dc2 + " " + "1" + "\n");
                     serialPort1.Write(show3);
                     listBox1.Items.Add(show3);
 
@@ -218,7 +218,7 @@ namespace cru_robot
                 case Keys.D://L
                     string show4;
                    // show4 = ("#" + " " + dc1 + " " + "-" + dc2 + " " + rpm2 + " " + rpm2 +" "+ mode + "\n");
-                    show4 = ("# " + dc1 + " " + "-" + rpm1 + " " + dc2 + " " + rpm2 + " " + mode + "\n");
+                    show4 = ("# " + rpm1 + " " + dc1 + " " + "-" + rpm2 + " " + dc2 + " " + "1" + "\n");
                     serialPort1.Write(show4);
                     listBox1.Items.Add(show4);
 

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using System.Threading;
 
 namespace cru_robot
 {
@@ -21,7 +22,8 @@ namespace cru_robot
         public float current_L, current_R,Vbatt,Vcc;
         // @,current_L, current_R,Vbatt,Vcc#
         public string[] data;
-        public string status;
+        public string   status;
+   
         public Form1()
         {
             InitializeComponent();
@@ -107,6 +109,8 @@ namespace cru_robot
         {
             if (videoCaptureDevice.IsRunning) { videoCaptureDevice.Stop(); }
             serialPort1.Close();
+            timer1.Stop();
+             
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -126,7 +130,7 @@ namespace cru_robot
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-           
+            timer1.Start();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -162,16 +166,14 @@ namespace cru_robot
 
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-
-            serialPort1.Write("# 0 0 0 0 2");
-
-        }
+        
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+           // timer1.Start();
+           
             
+
         }
 
         private void button1_KeyUp(object sender, KeyEventArgs e)
@@ -182,11 +184,6 @@ namespace cru_robot
                 show = ("#" + " " + "0" + " " + "0" + " " + "0" + " " + "0" + " " + "0" + "\n");
                 serialPort1.Write(show);
                 listBox1.Items.Add(show);
-                if (Connectsp.Enabled = false) 
-                {
-                timer1.Start();
-                timer2.Start();
-                 }
                 
         }
         
@@ -199,9 +196,12 @@ namespace cru_robot
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
-             serialPort1.ReadTo(status);
-             data = status.Split(',');
+            serialPort1.Write("# 0 0 0 0 2");
+            listBox2.Items.Add("# 0 0 0 0 2");
+             
+            serialPort1.ReadTo(status);
+            data = status.Split(',');
+             listBox2.Items.Add(status);
 
             Vcc_1.Text   = data[1];
             Vbatt_1.Text = data[2];
